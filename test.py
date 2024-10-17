@@ -1,3 +1,4 @@
+import time
 SET_COLOR = "\x1b[48;5;"
 END = "\x1b[0m"
 
@@ -39,13 +40,17 @@ if __name__ == "__main__":
     file = open("sequence.txt", 'r')
 
     sum = 0
+
     for i in range(125):
-        sum += float (file.readline())
-    print(sum/2)
+        sum += abs(float (file.readline()))
+    
+    print('Среднее по модулю первых 125 чисел: ', sum/125)
 
     sum = 0
+
     for i in range(125, 250):
-        sum += float (file.readline())
-    print(sum/2)
+        sum += abs(float (file.readline()))
+
+    print('Среднее по модулю вторых 125 чисел: ', sum/125)
     
     file.close()
